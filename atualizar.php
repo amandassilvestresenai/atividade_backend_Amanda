@@ -14,8 +14,10 @@
                 problema = ?,
                 data_entrada = ?,
                 status = ?
-            where id = ?";  
+            WHERE id = ?";
+
     $stmt = $conexao -> prepare($sql);
+
     $stmt -> bind_param(
         "sssssi",
         $cliente,
@@ -26,10 +28,10 @@
         $id
     );
 
-    if ($stmt -> execute()){
+    if ($stmt->execute()){
         header("Location: index.php");
         exit;
     } else {
         echo "Erro ao atualizar.";
-    }
+    }    
 ?>

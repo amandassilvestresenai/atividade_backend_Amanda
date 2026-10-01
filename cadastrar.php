@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +10,21 @@
     <div class="container">
         <h1>Nova Ordem de Serviço</h1>
 
-        <form action="salvar.php" method="post">
+        <form action="salvar.php" method="POST">
             <label>Cliente</label>
             <input type="text" name="cliente" required>
 
-            <label>Equipemento</label>
+            <label>Equipamento</label>
             <input type="text" name="equipamento" required>
 
             <label>Problema apresentado</label>
             <textarea name="problema" required></textarea>
 
-            <label>Data de Entrada</label>
+            <label>Data de entrada</label>
             <input type="date" name="data_entrada" required>
 
             <label>Status</label>
-            <select name="status" required>
+            <select name="status">
                 <option value="Recebido">Recebido</option>
                 <option value="Em análise">Em análise</option>
                 <option value="Em manutenção">Em manutenção</option>
@@ -32,7 +32,8 @@
             </select>
             <button type="submit">Cadastrar ordem</button>
         </form>
-        <a href="index.php"></a>
+
+        <a href="index.php">Voltar</a>
     </div>
 </body>
 </html>

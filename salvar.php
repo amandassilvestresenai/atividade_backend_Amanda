@@ -1,7 +1,7 @@
 <?php
     include "config/conexao.php";
-    //post é uma variável especial do php, recebe dados enviados pelo formulário quando usamos o method="post" do HTML
-
+    // POST É UMA VARIAVEL ESPECIAL DO PHP, RECEBE DADOS ENVIADOS
+    // PELO FORMULÁRIO QUANDO USAMOS O METHOD="POST" DO HTML.
     $cliente = $_POST["cliente"];
     $equipamento = $_POST["equipamento"];
     $problema = $_POST["problema"];
@@ -10,8 +10,8 @@
 
     $sql = "INSERT INTO ordens_servico
             (cliente, equipamento, problema, data_entrada, status)
-            values ( ?, ?, ?, ?, ?)";
-    //statement
+            VALUES (?, ?, ?, ?, ?)";
+    // STATEMENT
     $stmt = $conexao->prepare($sql);
 
     $stmt->bind_param(
@@ -23,10 +23,10 @@
         $status
     );
 
-    if ($stmt -> execute()){
+    if ($stmt->execute()){
         header("Location: index.php");
         exit;
-    } else {
-        echo "Erro ao cadastrar odrdem de serviço.";
+    } else{
+        echo "Erro ao cadastrar ordem de serviço.";
     }
 ?>
